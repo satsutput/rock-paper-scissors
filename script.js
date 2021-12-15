@@ -4,17 +4,17 @@ function computerPlay(choices) {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection != computerSelection) {
-        if (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") {
+        if (playerSelection == "rock" && computerSelection == "paper") {
             computerScore++;
-        } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") {
+        } else if (playerSelection == "rock" && computerSelection == "scissors") {
             playerScore++;
-        } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") {
+        } else if (playerSelection == "paper" && computerSelection == "rock") {
             playerScore++;
-        } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "scissors") {
+        } else if (playerSelection == "paper" && computerSelection == "scissors") {
             computerScore++;
-        } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "rock") {
+        } else if (playerSelection == "scissors" && computerSelection == "rock") {
             computerScore++;
-        } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "paper") {
+        } else if (playerSelection == "scissors" && computerSelection == "paper") {
             playerScore++;
         } 
     } else {
@@ -22,20 +22,26 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    for (let i=0; i<5;i++) {
+function game(e) {
+    if (playerScore >= 5 || computerScore >= 5) {
+        console.log((playerScore>computerScore)? "You Win" : "You Lose");
+    } else {
+        const playerChoice = e.target.textContent.toLowerCase();
         const computerChoice = computerPlay(choices);
-        let playerChoice = prompt("What do you choose? Rock, Paper or Scissors.");
-        while (playerChoice.toLowerCase() != "rock" && playerChoice.toLowerCase() != "paper" && playerChoice.toLowerCase() != "scissors") {
-            playerChoice = prompt("Please choose between Rock, Paper or Scissors!");
-        }
         playRound(playerChoice, computerChoice);
+        
+        para.textContent = `You: ${playerChoice} Computer: ${computerChoice}\r\n`;
+        para.textContent += `You: ${playerScore} Computer: ${computerScore}`;
+        div.appendChild(para);
     }
-    console.log((playerScore>computerScore)? "You Win" : "You Lose");
-    console.log(`You: ${playerScore} Computer: ${computerScore}`);
 }
 
 const choices = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let computerScore = 0;
-game();
+const div = document.getElementsByTagName('div')[0];
+const para = document.createElement('p');
+
+// get buttons and add event listeners
+const buttons = document.getElementsByClassName('choices');
+Array.from(buttons).forEach(button => button.addEventListener('click', game));
