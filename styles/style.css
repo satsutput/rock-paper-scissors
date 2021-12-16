@@ -1,0 +1,25 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    align-self: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.fst-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.fst-content h1 {
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
