@@ -14,14 +14,22 @@
     </header>
     <div class="content">
         <div class="fst-content">
-            <h1 id="player-score">0</h1>
-            <h1>-</h1>
-            <h1 id="computer-score">0</h1>
+            <section>
+                <h1 id="player-score">0</h1>
+                <h2>You</h2>
+            </section>
+            <section>
+                <h1>-</h1>
+            </section>
+            <section>
+                <h1 id="computer-score">0</h1>
+                <h2>Computer</h2>
+            </section>
         </div>
-        <div>
-            <button class="choices">Rock</button>
-            <button class="choices">Paper</button>
-            <button class="choices">Scissors</button>
+        <div class="snd-content">
+            <button type="reset" class="choices" id="rock"><span id="rock">Rock</span></button>
+            <button class="choices" id="paper">Paper</button>
+            <button class="choices" id="scissors">Scissors</button>
         </div>
     </div>
     <footer>This is footer</footer>

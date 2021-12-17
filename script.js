@@ -18,7 +18,7 @@ function playRound(playerSelection, computerSelection) {
             playerScore++;
         } 
     } else {
-        console.log(`Draw! both: ${playerSelection} `);
+        // Draw
     }
 }
 

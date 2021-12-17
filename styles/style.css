@@ -1,5 +1,7 @@
 body {
+    margin: 0;
     min-height: 100vh;
+    background-color: floralwhite;
     display: flex;
     flex-direction: column;
 }
@@ -8,18 +10,52 @@ header {
     align-self: center;
 }
 
+h1, h2 {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
 .content {
     display: flex;
     flex-direction: column;
 }
 
 .fst-content {
+    background-color: black;
     display: flex;
     justify-content: center;
     gap: 50px;
+    margin: 0 250px;
+}
+
+.fst-content section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: aliceblue;
 }
 
 .fst-content h1 {
-    font-size: 50px;
+    font-size: 80px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.snd-content {
+    display: flex;
+}
+
+#rock {
+    background-image: url(../img/rock.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 340px;
+    width: 238px;
+    border: none;
+}
+
+#rock span {
+    display: none;
 }
